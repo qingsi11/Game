@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.GameDao">
+    <select id="queryGamebyId" resultType="game">
+        select * from games where id = #{id}
+    </select>
+
+    <select id="queryAllGames" resultType="game">
+        select * from games
+    </select>
+
+    <select id="selectGameByMessage" resultType="game">
+       select * from games where gname like #{game}
+    </select>
+    <insert id="insertGame" >
+        INSERT INTO games(gname,gbi,gtime,gtype) VALUES (#{gname},#{gbi},#{gtime},#{gtype})
+    </insert>
+
+    <update id="updateGame">
+        UPDATE games SET gbi = #{gbi}, gtime = #{gtime},gtype=#{gtype} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteGameById">
+        delete from games where id = #{id}
+    </delete>
+
+
+</mapper>

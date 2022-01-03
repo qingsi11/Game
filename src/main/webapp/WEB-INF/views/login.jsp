@@ -9,17 +9,18 @@
 <html>
 <head>
     <title>登录</title>
-    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="static/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="static/js/jquery-1.7.2.js"></script>
+    <%
+        pageContext.setAttribute("ctp",request.getContextPath());
+    %>
+    <script type="text/javascript" src="${ctp}/static/js/jquery1.11.3.js"></script>
+    <link href="${ctp}/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script src="${ctp}/static/bootstrap/js/bootstrap.js"></script>
 </head>
 <body>
-<%
-    pageContext.setAttribute("ctp",request.getContextPath());
-%>
+
 <div >
     <div class="container-fluid">
-        <form action="${ctp}/login" class="form-horizontal" role="form" method="get">
+        <form action="${ctp}/login" class="form-horizontal" role="form" method="post">
             <div class="form-group">
                 <label for="username" class="col-sm-2 control-label">用户名</label>
                 <div class="col-sm-5">
@@ -32,6 +33,20 @@
                     <input type="password" class="form-control" name="password" id="password" placeholder="请输入密码">
                 </div>
             </div>
+
+<%--            验证码--%>
+
+            <div class="form-group">
+                <label for="code" class="col-sm-2 control-label">验证码</label>
+                <div class="col-sm-1">
+                    <input type="text" class="form-control" id="code" name="code" placeholder="验证码" />
+                </div>
+                <div class="col-sm-1 ">
+                    <img src="checkCode" alt="" width="100" height="32" class="passcode" style="height:43px;cursor:pointer;" onclick="this.src=this.src+'?'">
+                </div>
+            </div>
+
+
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <div class="checkbox">
@@ -50,5 +65,13 @@
 
     </div>
 </div>
+
+<script type="text/javascript" >
+    function flushCode() {
+        var time = new Date();
+        document.getElementById("code").src = "/HelpProject/ImageServlet?time="
+            + time;
+    }
+</script>
 </body>
 </html>

@@ -2,17 +2,17 @@ package com.example.bean;
 
 public class User {
 
-    private Integer userId;
-    private String userName;
+    private Integer id;
+    private String username;
     private String password;
     private String email;
 
     public User() {
     }
 
-    public User(Integer userId, String userName, String password, String email) {
-        this.userId = userId;
-        this.userName = userName;
+    public User(Integer id, String username, String password, String email) {
+        this.id = id;
+        this.username = username;
         this.password = password;
         this.email = email;
     }
@@ -20,27 +20,28 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
+                "userId=" + id +
+                ", userName='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }
 
-    public Integer getUserId() {
-        return userId;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String userName) {
+        this.username = userName;
     }
 
     public String getPassword() {
