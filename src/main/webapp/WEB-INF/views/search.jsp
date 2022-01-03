@@ -57,11 +57,11 @@
 </div>
 
 
-<div class="container">
+<div class="container container-fluid">
     <c:forEach items="${games}" var="game">
     <div class="row ">
             <div class="col-sm-8 col-md-6">
-                <div class="thumbnail container-fluid">
+                <div class="thumbnail ">
                     <img src="${ctp}/${game.gicon}"  alt="...">
                     <div class="caption">
                         <h3>${game.gname}</h3>

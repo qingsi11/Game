@@ -36,8 +36,19 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">游戏中心</a></li>
+                    <li class="active"><a href="togame/1">首页 <span class="sr-only">(current)</span></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">游戏类别 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">MOBA</a></li>
+                            <li><a href="#">休闲养成</a></li>
+                            <li><a href="#">单机策略</a></li>
+                            <li><a href="#">塔防策略</a></li>
+                            <li><a href="#">武侠单机</a></li>
+                            <li><a href="#">沙盒冒险</a></li>
+                            <li><a href="#">策略卡牌</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">个人中心</a></li>
                 </ul>
                 <form action="toSearch" class="navbar-form navbar-left">
@@ -54,5 +65,14 @@
         </div><!-- /.container-fluid -->
     </nav>
 </div>
+
+<div>
+
+</div>
+
+
+
+
+
 </body>
 </html>

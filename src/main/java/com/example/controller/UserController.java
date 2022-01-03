@@ -85,7 +85,7 @@ public class UserController {
     public String login( String username, String password,String code){
         User user = userService.loginUser(username, password);
         if (user != null && code.equals(randomcodekey)){
-            return "redirect:/home.jsp";
+            return "redirect:/togame/1";
         }else {
             return "login";
         }

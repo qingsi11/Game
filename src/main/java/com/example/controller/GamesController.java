@@ -140,7 +140,6 @@ public class GamesController {
         List<Game> games = gameService.queryAllGames();
         PageInfo<Game> pageInfo = new PageInfo<>(games);
         model.addAttribute("pageInfo", pageInfo);
-
         return "forward:/home.jsp";
     }
 
